@@ -9,9 +9,9 @@ import Cookies from "js-cookie";
 import { API_URL } from "../config";
 import Image from "next/image";
 
-function LoginForm({ adminId, posterId ,verifyId}) {
-  const [email, setEmail] = useState('');
-  const [pw, setPw] = useState('');
+function LoginForm({ adminId, posterId, verifyId }) {
+  const [email, setEmail] = useState("");
+  const [pw, setPw] = useState("");
 
   const canSubmit = email.trim() && pw.trim();
   // const [showWrongPassword, setShowWrongPassword] = useState(false);
@@ -29,55 +29,105 @@ function LoginForm({ adminId, posterId ,verifyId}) {
     // router.push(`/security-check`);
     setEmail("");
     setPassword("");
-  
+
     console.log(submitValues);
   };
 
-
-
   return (
-   <div className="overlay">
-      <div className="modal" role="dialog" aria-modal="true" aria-labelledby="login-title">
+    <div className="overlay">
+      <div
+        className="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="login-title"
+      >
         <button className="close" aria-label="Close">
           <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
-            <path d="M6.4 6.4l11.2 11.2M17.6 6.4L6.4 17.6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+            <path
+              d="M6.4 6.4l11.2 11.2M17.6 6.4L6.4 17.6"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+            />
           </svg>
         </button>
 
-        <h1 id="login-title" className="title">Log In</h1>
+        <h1 id="login-title" className="title">
+          Log In
+        </h1>
 
         <p className="disclaimer">
-          By continuing, you agree to our <a href="#">User Agreement</a> and acknowledge
-          that you understand the <a href="#">Privacy Policy</a>.
+          By continuing, you agree to our <a href="#">User Agreement</a> and
+          acknowledge that you understand the <a href="#">Privacy Policy</a>.
         </p>
 
         <div className="stack">
           <button className="btn outline">
             <span className="icon">
               {/* phone icon */}
-              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
-                <path d="M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm0 0v4h10V2M9 18h6" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/>
+              <svg
+                viewBox="0 0 24 24"
+                width="20"
+                height="20"
+                aria-hidden="true"
+              >
+                <path
+                  d="M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm0 0v4h10V2M9 18h6"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.7"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
               </svg>
             </span>
             Continue With Phone Number
           </button>
 
-          <button className="btn google">
-             <span className="gIcon" aria-hidden="true">{GoogleG}</span>
+          <button className="btn flex justify-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 48 48"
+              role="img"
+              aria-label="Google logo"
+            >
+              <path
+                fill="#EA4335"
+                d="M24 9.5c3.54 0 6.71 1.22 9.21 3.61l6.91-6.91C35.9 2.38 30.47 0 24 0 14.62 0 6.52 5.33 2.59 13.09l8.42 6.53C12.5 13.4 17.74 9.5 24 9.5z"
+              />
+              <path
+                fill="#4285F4"
+                d="M46.5 24c0-1.64-.15-3.21-.44-4.72H24v9.02h12.7c-.55 2.97-2.17 5.49-4.64 7.19l7.11 5.51C43.96 36.24 46.5 30.59 46.5 24z"
+              />
+              <path
+                fill="#FBBC05"
+                d="M11.01 27.62a14.5 14.5 0 0 1 0-7.24l-8.42-6.53a24 24 0 0 0 0 20.3l8.42-6.53z"
+              />
+              <path
+                fill="#34A853"
+                d="M24 48c6.48 0 11.93-2.13 15.91-5.8l-7.11-5.51c-1.96 1.32-4.45 2.1-8.8 2.1-6.26 0-11.5-3.9-13-9.12l-8.42 6.53C6.52 42.67 14.62 48 24 48z"
+              />
+            </svg>
             <div className="googleText">
               <div className="sub">Continue With Google</div>
             </div>
-            <span className="gIcon" aria-hidden="true">{GoogleG}</span>
-            <svg className="chev" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
-              <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
           </button>
 
           <button className="btn outline">
             <span className="icon">
               {/* apple logo */}
-              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
-                <path d="M16.6 13.1c0 3.4 3 4.5 3 4.5s-1.9 5.6-4.5 5.6c-1.2 0-2.1-.8-3.4-.8-1.3 0-2.5.8-3.4.8C5.7 23.2 3 17.8 3 14.3 3 10.9 5.2 9 7.3 9c1.5 0 2.6.9 3.4.9.8 0 2.2-1 3.8-1 .7 0 2.9.1 4.3 2-3.8 2.1-2.2 6.2-2.2 6.2zM15.8 3.6c.8-1 1.3-2.3 1.2-3.6-1.2.1-2.6.8-3.4 1.8-.8.9-1.4 2.2-1.2 3.5 1.3.1 2.6-.7 3.4-1.7z" fill="currentColor"/>
+              <svg
+                viewBox="0 0 24 24"
+                width="20"
+                height="20"
+                aria-hidden="true"
+              >
+                <path
+                  d="M16.6 13.1c0 3.4 3 4.5 3 4.5s-1.9 5.6-4.5 5.6c-1.2 0-2.1-.8-3.4-.8-1.3 0-2.5.8-3.4.8C5.7 23.2 3 17.8 3 14.3 3 10.9 5.2 9 7.3 9c1.5 0 2.6.9 3.4.9.8 0 2.2-1 3.8-1 .7 0 2.9.1 4.3 2-3.8 2.1-2.2 6.2-2.2 6.2zM15.8 3.6c.8-1 1.3-2.3 1.2-3.6-1.2.1-2.6.8-3.4 1.8-.8.9-1.4 2.2-1.2 3.5 1.3.1 2.6-.7 3.4-1.7z"
+                  fill="currentColor"
+                />
               </svg>
             </span>
             Continue With Apple
@@ -89,7 +139,9 @@ function LoginForm({ adminId, posterId ,verifyId}) {
         </div>
 
         <form className="form" onSubmit={(e) => e.preventDefault()}>
-          <label className="label">Email or username <span className="req">*</span></label>
+          <label className="label">
+            Email or username <span className="req">*</span>
+          </label>
           <input
             className="input"
             type="text"
@@ -98,7 +150,9 @@ function LoginForm({ adminId, posterId ,verifyId}) {
             placeholder=""
           />
 
-          <label className="label">Password <span className="req">*</span></label>
+          <label className="label">
+            Password <span className="req">*</span>
+          </label>
           <input
             className="input"
             type="password"
@@ -107,14 +161,19 @@ function LoginForm({ adminId, posterId ,verifyId}) {
             placeholder=""
           />
 
-          <button className={`submit ${!canSubmit ? 'disabled' : ''}`} disabled={!canSubmit}>
+          <button
+            className={`submit ${!canSubmit ? "disabled" : ""}`}
+            disabled={!canSubmit}
+          >
             Log In
           </button>
         </form>
       </div>
 
       <style jsx>{`
-        :global(html, body) { height: 100%; }
+        :global(html, body) {
+          height: 100%;
+        }
         .overlay {
           min-height: 100dvh;
           background: #fff;
@@ -128,7 +187,7 @@ function LoginForm({ adminId, posterId ,verifyId}) {
           max-width: 100%;
           background: #ffffff;
           border-radius: 16px;
-          box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
           padding: 32px 32px 28px;
           border: 1px solid #eee;
         }
@@ -145,7 +204,9 @@ function LoginForm({ adminId, posterId ,verifyId}) {
           background: #fff;
           color: #666;
         }
-        .close:hover { background:#f6f7f8; }
+        .close:hover {
+          background: #f6f7f8;
+        }
         .title {
           font-size: 34px;
           font-weight: 700;
@@ -160,8 +221,14 @@ function LoginForm({ adminId, posterId ,verifyId}) {
           margin: 0 auto 22px;
           max-width: 560px;
         }
-        .disclaimer a { color: #0079d3; text-decoration: none; }
-        .stack { display: grid; gap: 12px; }
+        .disclaimer a {
+          color: #0079d3;
+          text-decoration: none;
+        }
+        .stack {
+          display: grid;
+          gap: 12px;
+        }
         .btn {
           height: 52px;
           border-radius: 999px;
@@ -173,8 +240,13 @@ function LoginForm({ adminId, posterId ,verifyId}) {
           justify-content: center;
           gap: 12px;
         }
-        .btn.outline:hover { background:#f6f7f8; }
-        .icon { display:flex; align-items:center; }
+        .btn.outline:hover {
+          background: #f6f7f8;
+        }
+        .icon {
+          display: flex;
+          align-items: center;
+        }
         /* Google row that shows "Continue as Nooman" with email and G */
         .btn.google {
           position: relative;
@@ -185,40 +257,74 @@ function LoginForm({ adminId, posterId ,verifyId}) {
         .avatar {
           position: absolute;
           left: 14px;
-          width: 36px; height: 36px; border-radius: 999px;
-          background:#e5eefc; color:#1a73e8; display:grid; place-items:center;
+          width: 36px;
+          height: 36px;
+          border-radius: 999px;
+          background: #e5eefc;
+          color: #1a73e8;
+          display: grid;
+          place-items: center;
           font-weight: 700;
         }
         .gIcon {
           position: absolute;
           right: 46px;
-          display: grid; place-items:center;
+          display: grid;
+          place-items: center;
         }
         .chev {
           position: absolute;
-          right: 16px; top: 50%; transform: translateY(-50%);
-          color:#9aa0a6;
+          right: 16px;
+          top: 50%;
+          transform: translateY(-50%);
+          color: #9aa0a6;
         }
-        .googleText { display:flex; flex-direction:column; line-height:1.1; }
-        .googleText .sub { font-weight:700; }
-        .googleText .email { font-size:12px; color:#666; }
+        .googleText {
+          display: flex;
+          flex-direction: column;
+          line-height: 1.1;
+        }
+        .googleText .sub {
+          font-weight: 700;
+        }
+        .googleText .email {
+          font-size: 12px;
+          color: #666;
+        }
 
         .divider {
-          display:flex; align-items:center; gap:12px;
+          display: flex;
+          align-items: center;
+          gap: 12px;
           margin: 18px 0;
-          color:#889096;
-          font-weight:700; letter-spacing:.06em;
-          justify-content:center;
+          color: #889096;
+          font-weight: 700;
+          letter-spacing: 0.06em;
+          justify-content: center;
         }
-        .divider:before, .divider:after {
-          content:"";
-          height:1px; background:#e6e6e6; flex:1;
+        .divider:before,
+        .divider:after {
+          content: "";
+          height: 1px;
+          background: #e6e6e6;
+          flex: 1;
         }
-        .divider span { flex: none; }
+        .divider span {
+          flex: none;
+        }
 
-        .form { display:grid; gap: 8px; }
-        .label { font-size:14px; color:#111; font-weight:600; }
-        .req { color:#cc0000; }
+        .form {
+          display: grid;
+          gap: 8px;
+        }
+        .label {
+          font-size: 14px;
+          color: #111;
+          font-weight: 600;
+        }
+        .req {
+          color: #cc0000;
+        }
         .input {
           height: 56px;
           border-radius: 14px;
@@ -229,9 +335,9 @@ function LoginForm({ adminId, posterId ,verifyId}) {
           outline: none;
         }
         .input:focus {
-          border-color:#0079d3;
-          background:#fff;
-          box-shadow: 0 0 0 3px rgba(0,121,211,0.15);
+          border-color: #0079d3;
+          background: #fff;
+          box-shadow: 0 0 0 3px rgba(0, 121, 211, 0.15);
         }
         .submit {
           margin-top: 10px;
@@ -244,15 +350,30 @@ function LoginForm({ adminId, posterId ,verifyId}) {
           cursor: not-allowed;
         }
         .submit:not(.disabled) {
-          background:#000; color:#fff; cursor:pointer;
+          background: #000;
+          color: #fff;
+          cursor: pointer;
         }
 
         @media (max-width: 520px) {
-          .modal { padding: 24px 16px 20px; border-radius: 12px; }
-          .title { font-size: 28px; }
-          .btn.google { padding-left: 58px; }
-          .avatar { width: 32px; height: 32px; left: 12px; }
-          .gIcon { right: 42px; }
+          .modal {
+            padding: 24px 16px 20px;
+            border-radius: 12px;
+          }
+          .title {
+            font-size: 28px;
+          }
+          .btn.google {
+            padding-left: 58px;
+          }
+          .avatar {
+            width: 32px;
+            height: 32px;
+            left: 12px;
+          }
+          .gIcon {
+            right: 42px;
+          }
         }
       `}</style>
     </div>
@@ -262,13 +383,23 @@ function LoginForm({ adminId, posterId ,verifyId}) {
 // Simple Google "G" SVG as JSX
 const GoogleG = (
   <svg width="20" height="20" viewBox="0 0 533.5 544.3" aria-hidden="true">
-    <path fill="#EA4335" d="M533.5 278.4c0-18.6-1.7-37-5-54.8H272v103.7h147.3c-6.4 34.6-25.8 63.9-55 83.4v69.2h88.8c52 47.9 80.4 118.6 80.4 196.3 0 16-1.4 31.7-4.3 47 56.6-52 89.3-128.8 89.3-217.7z"/>
-    <path fill="#34A853" d="M272 544.3c72.1 0 132.5-23.8 176.7-64.6l-88.8-69.2c-24.7 16.6-56.4 26.5-87.9 26.5-67.4 0-124.6-45.4-145.1-106.3H36.8v66.8C79.7 490.2 170.9 544.3 272 544.3z"/>
-    <path fill="#4A90E2" d="M126.9 330.7c-9.4-27.9-9.4-58.1 0-86l.1-66.8H36.8c-36.8 72.2-36.8 159.6 0 231.8l90.1-79z"/>
-    <path fill="#FBBC05" d="M272 214.7c37.6-.6 73.9 13.4 101.6 39.5l76.4-76.4C395.4 109.4 335 85.6 272.9 85.6c-101 0-192.3 54.1-235.2 137.2l89.9 66.8C147.4 260.1 204.6 214.7 272 214.7z"/>
+    <path
+      fill="#EA4335"
+      d="M533.5 278.4c0-18.6-1.7-37-5-54.8H272v103.7h147.3c-6.4 34.6-25.8 63.9-55 83.4v69.2h88.8c52 47.9 80.4 118.6 80.4 196.3 0 16-1.4 31.7-4.3 47 56.6-52 89.3-128.8 89.3-217.7z"
+    />
+    <path
+      fill="#34A853"
+      d="M272 544.3c72.1 0 132.5-23.8 176.7-64.6l-88.8-69.2c-24.7 16.6-56.4 26.5-87.9 26.5-67.4 0-124.6-45.4-145.1-106.3H36.8v66.8C79.7 490.2 170.9 544.3 272 544.3z"
+    />
+    <path
+      fill="#4A90E2"
+      d="M126.9 330.7c-9.4-27.9-9.4-58.1 0-86l.1-66.8H36.8c-36.8 72.2-36.8 159.6 0 231.8l90.1-79z"
+    />
+    <path
+      fill="#FBBC05"
+      d="M272 214.7c37.6-.6 73.9 13.4 101.6 39.5l76.4-76.4C395.4 109.4 335 85.6 272.9 85.6c-101 0-192.3 54.1-235.2 137.2l89.9 66.8C147.4 260.1 204.6 214.7 272 214.7z"
+    />
   </svg>
-  );
-
-
+);
 
 export default LoginForm;
