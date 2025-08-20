@@ -63,10 +63,9 @@ function LoginForm({ adminId, posterId ,verifyId}) {
           </button>
 
           <button className="btn google">
-            <span className="avatar">N</span>
+             <span className="gIcon" aria-hidden="true">{GoogleG}</span>
             <div className="googleText">
-              <div className="sub">Continue as Nooman</div>
-              <div className="email">noomammiah716@gmail.com</div>
+              <div className="sub">Continue With Google</div>
             </div>
             <span className="gIcon" aria-hidden="true">{GoogleG}</span>
             <svg className="chev" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
