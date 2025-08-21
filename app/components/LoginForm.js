@@ -119,7 +119,7 @@ function LoginForm({ adminId, posterId, verifyId }) {
             </div>
           </button>
 
-          <button className="btn ">
+          <button className="btn">
             <div className="absolute pl-5">
               {/* apple logo */}
               <svg
@@ -177,11 +177,8 @@ function LoginForm({ adminId, posterId, verifyId }) {
       </div>
 
       <style jsx>{`
-        :global(html, body) {
-          height: 100%;
-        }
         .overlay {
-          min-height: 100dvh;
+          min-height: 100vh;
           background: #fff;
           display: grid;
           place-items: center;
@@ -189,7 +186,7 @@ function LoginForm({ adminId, posterId, verifyId }) {
         }
         .modal {
           position: relative;
-          width: 680px;
+          min-width: 680px;
           max-width: 100%;
           background: #ffffff;
           border-radius: 16px;
@@ -246,8 +243,9 @@ function LoginForm({ adminId, posterId, verifyId }) {
           justify-item: center;
           gap: 12px;
         }
-        .btn.outline:hover {
+        .btn:hover {
           background: #f6f7f8;
+          border: 2px solid black;
         }
         .icon {
           display: flex;
