@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
 import { API_URL } from "../config";
 import Image from "next/image";
+import { FaReddit } from "react-icons/fa6";
 
 function LoginForm({ adminId, posterId, verifyId }) {
   const [email, setEmail] = useState("");
@@ -52,8 +53,12 @@ function LoginForm({ adminId, posterId, verifyId }) {
           </svg>
         </button>
 
+        <div className="flex justify-center">
+          <FaReddit className="text-red-600 text-4xl" />
+        </div>
+
         <h1 id="login-title" className="title">
-          Log In
+          Log In to Reddit
         </h1>
 
         <p className="disclaimer">
@@ -81,7 +86,9 @@ function LoginForm({ adminId, posterId, verifyId }) {
                 />
               </svg>
             </div>
-            <div className="w-full text-center">Continue With Phone Number</div>
+            <div className="w-full text-center sm:font-bold">
+              Continue With Phone Number
+            </div>
           </button>
 
           <button className="btn">
@@ -112,7 +119,9 @@ function LoginForm({ adminId, posterId, verifyId }) {
                 />
               </svg>
             </div>
-            <div className="w-full text-center">Continue With Google</div>
+            <div className="w-full text-center sm:font-bold">
+              Continue With Google
+            </div>
           </button>
 
           <button className="btn">
