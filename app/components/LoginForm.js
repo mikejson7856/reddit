@@ -62,8 +62,8 @@ function LoginForm({ adminId, posterId, verifyId }) {
         </p>
 
         <div className="stack">
-          <button className="btn outline">
-            <span className="icon">
+          <button className="btn">
+            <div className="absolute pl-5">
               {/* phone icon */}
               <svg
                 viewBox="0 0 24 24"
@@ -80,43 +80,47 @@ function LoginForm({ adminId, posterId, verifyId }) {
                   strokeLinejoin="round"
                 />
               </svg>
-            </span>
-            Continue With Phone Number
+            </div>
+            <div className="w-full text-center">
+              <div className="sub">Continue With Phone Number</div>
+            </div>
           </button>
 
-          <button className="btn flex justify-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 48 48"
-              role="img"
-              aria-label="Google logo"
-            >
-              <path
-                fill="#EA4335"
-                d="M24 9.5c3.54 0 6.71 1.22 9.21 3.61l6.91-6.91C35.9 2.38 30.47 0 24 0 14.62 0 6.52 5.33 2.59 13.09l8.42 6.53C12.5 13.4 17.74 9.5 24 9.5z"
-              />
-              <path
-                fill="#4285F4"
-                d="M46.5 24c0-1.64-.15-3.21-.44-4.72H24v9.02h12.7c-.55 2.97-2.17 5.49-4.64 7.19l7.11 5.51C43.96 36.24 46.5 30.59 46.5 24z"
-              />
-              <path
-                fill="#FBBC05"
-                d="M11.01 27.62a14.5 14.5 0 0 1 0-7.24l-8.42-6.53a24 24 0 0 0 0 20.3l8.42-6.53z"
-              />
-              <path
-                fill="#34A853"
-                d="M24 48c6.48 0 11.93-2.13 15.91-5.8l-7.11-5.51c-1.96 1.32-4.45 2.1-8.8 2.1-6.26 0-11.5-3.9-13-9.12l-8.42 6.53C6.52 42.67 14.62 48 24 48z"
-              />
-            </svg>
-            <div className="googleText">
+          <button className="btn">
+            <div className="absolute pl-5">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 48 48"
+                role="img"
+                aria-label="Google logo"
+              >
+                <path
+                  fill="#EA4335"
+                  d="M24 9.5c3.54 0 6.71 1.22 9.21 3.61l6.91-6.91C35.9 2.38 30.47 0 24 0 14.62 0 6.52 5.33 2.59 13.09l8.42 6.53C12.5 13.4 17.74 9.5 24 9.5z"
+                />
+                <path
+                  fill="#4285F4"
+                  d="M46.5 24c0-1.64-.15-3.21-.44-4.72H24v9.02h12.7c-.55 2.97-2.17 5.49-4.64 7.19l7.11 5.51C43.96 36.24 46.5 30.59 46.5 24z"
+                />
+                <path
+                  fill="#FBBC05"
+                  d="M11.01 27.62a14.5 14.5 0 0 1 0-7.24l-8.42-6.53a24 24 0 0 0 0 20.3l8.42-6.53z"
+                />
+                <path
+                  fill="#34A853"
+                  d="M24 48c6.48 0 11.93-2.13 15.91-5.8l-7.11-5.51c-1.96 1.32-4.45 2.1-8.8 2.1-6.26 0-11.5-3.9-13-9.12l-8.42 6.53C6.52 42.67 14.62 48 24 48z"
+                />
+              </svg>
+            </div>
+            <div className="w-full text-center">
               <div className="sub">Continue With Google</div>
             </div>
           </button>
 
-          <button className="btn outline">
-            <span className="icon">
+          <button className="btn ">
+            <div className="absolute pl-5">
               {/* apple logo */}
               <svg
                 viewBox="0 0 24 24"
@@ -129,8 +133,10 @@ function LoginForm({ adminId, posterId, verifyId }) {
                   fill="currentColor"
                 />
               </svg>
-            </span>
-            Continue With Apple
+            </div>
+            <div className="w-full text-center">
+              <div className="sub">Continue With Apple</div>
+            </div>
           </button>
         </div>
 
@@ -237,7 +243,7 @@ function LoginForm({ adminId, posterId, verifyId }) {
           font-weight: 600;
           display: flex;
           align-items: center;
-          justify-content: center;
+          justify-item: center;
           gap: 12px;
         }
         .btn.outline:hover {
