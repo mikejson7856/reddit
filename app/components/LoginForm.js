@@ -63,7 +63,7 @@ function LoginForm({ adminId, posterId, verifyId }) {
 
         <div className="stack">
           <button className="btn">
-            <div className="absolute pl-5">
+            <div className="sm:absolute pl-5">
               {/* phone icon */}
               <svg
                 viewBox="0 0 24 24"
@@ -81,13 +81,11 @@ function LoginForm({ adminId, posterId, verifyId }) {
                 />
               </svg>
             </div>
-            <div className="w-full text-center">
-              <div className="sub">Continue With Phone Number</div>
-            </div>
+            <div className="w-full text-center">Continue With Phone Number</div>
           </button>
 
           <button className="btn">
-            <div className="absolute pl-5">
+            <div className="sm:absolute pl-5">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
@@ -114,13 +112,11 @@ function LoginForm({ adminId, posterId, verifyId }) {
                 />
               </svg>
             </div>
-            <div className="w-full text-center">
-              <div className="sub">Continue With Google</div>
-            </div>
+            <div className="w-full text-center">Continue With Google</div>
           </button>
 
           <button className="btn">
-            <div className="absolute pl-5">
+            <div className="sm:absolute pl-5">
               {/* apple logo */}
               <svg
                 viewBox="0 0 24 24"
@@ -134,8 +130,8 @@ function LoginForm({ adminId, posterId, verifyId }) {
                 />
               </svg>
             </div>
-            <div className="w-full text-center">
-              <div className="sub">Continue With Apple</div>
+            <div className="w-full text-center sm:font-bold">
+              Continue With Apple
             </div>
           </button>
         </div>
@@ -182,12 +178,9 @@ function LoginForm({ adminId, posterId, verifyId }) {
           background: #fff;
           display: grid;
           place-items: center;
-          padding: 24px;
         }
         .modal {
           position: relative;
-          min-width: 680px;
-          max-width: 100%;
           background: #ffffff;
           border-radius: 16px;
           box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
@@ -237,11 +230,9 @@ function LoginForm({ adminId, posterId, verifyId }) {
           border-radius: 999px;
           border: 1px solid #e6e6e6;
           background: #ffffff;
-          font-weight: 600;
           display: flex;
           align-items: center;
           justify-item: center;
-          gap: 12px;
         }
         .btn:hover {
           background: #f6f7f8;
@@ -287,9 +278,6 @@ function LoginForm({ adminId, posterId, verifyId }) {
           display: flex;
           flex-direction: column;
           line-height: 1.1;
-        }
-        .googleText .sub {
-          font-weight: 700;
         }
         .googleText .email {
           font-size: 12px;
